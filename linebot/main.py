@@ -1,202 +1,149 @@
 from flask import Flask, request, abort
 from linebot import (
-    LineBotApi, WebhookHandler
+	LineBotApi, WebhookHandler
 )
 from linebot.exceptions import (
-    InvalidSignatureError
+	InvalidSignatureError
 )
 from linebot.models import *
+
+import os
+import requests
+import json
+
+LINE_CHANNEL_ACCESS_TOKEN = 'Yshg4CA3SLnkkrL7QaXjugcLEMJHJzPSnCfsKAfieCy/uGIKKP6FSmd8mRCxpSjKjKKY8pL2gSrpM3BPQnycXONqzVsHalkROLFXEwIlHDMoZ7/WTUWdxIEECeNIxPFL9Obnjzh/SSkCVSAbee73LwdB04t89/1O/w1cDnyilFU='
+CHANNEL_SECRET = '7151206af393ef579bc413445141c067'
+
+SALES_MENU = 'richmenu-d61ed077772018d11eaa26ac06f36738'
+CUSTOMER_MENU = 'richmenu-4d8a81caf3c2bb858d3f35d9d840fdc1'
 
 
 app = Flask(__name__)
 # LINE BOT info
-line_bot_api = LineBotApi('Yshg4CA3SLnkkrL7QaXjugcLEMJHJzPSnCfsKAfieCy/uGIKKP6FSmd8mRCxpSjKjKKY8pL2gSrpM3BPQnycXONqzVsHalkROLFXEwIlHDMoZ7/WTUWdxIEECeNIxPFL9Obnjzh/SSkCVSAbee73LwdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('7151206af393ef579bc413445141c067')
+line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
+handler = WebhookHandler(CHANNEL_SECRET)
 
 @app.route("/callback", methods=['POST'])
 def callback():
-    signature = request.headers['X-Line-Signature']
-    body = request.get_data(as_text=True)
-    app.logger.info("Request body: " + body)
-    print(body)
-    try:
-        handler.handle(body, signature)
-    except InvalidSignatureError:
-        abort(400)
-    return 'OK'
+	signature = request.headers['X-Line-Signature']
+	body = request.get_data(as_text=True)
+	app.logger.info("Request body: " + body)
+	try:
+		handler.handle(body, signature)
+	except InvalidSignatureError:
+		abort(400)
+	return 'OK'
 
+@handler.add(FollowEvent)
+def handle_follow(event):
+	role = "customer"
+	user_id = event.source.user_id
+
+	# Assign rich menu based on user role
+	link_rich_menu(role, user_id)
+	welcome_message = TextSendMessage(text="Welcome! Welcome!")
+	line_bot_api.reply_message(event.reply_token, welcome_message)
 
 # Message event
 @handler.add(MessageEvent)
 def handle_message(event):
-    message_type = event.message.type
-    user_id = event.source.user_id
-    reply_token = event.reply_token
-    message = event.message.text
-    line_bot_api.reply_message(reply_token, TextSendMessage(text = message))
-    print('reply_token: ', reply_token)
+	message_type = event.message.type
+	user_id = event.source.user_id
+	reply_token = event.reply_token
+	message = event.message.text
+
+	line_bot_api.reply_message(reply_token, TextSendMessage(text = message))
 
 
 @handler.add(PostbackEvent)
 def handle_postback(event):
-	if event.postback.data == 'action=show_flex':
+	if event.postback.data == 'action=travel':
+		labelText = "前往投保旅平險"
+		uri_action = URIAction(label="go go go!", uri="https://dev.robinstech.com.tw/travel_black/")
+
 		flex_message = FlexSendMessage(
-			alt_text='hello',
-			contents={ # 就把JSON貼過來吧
-				"type": "bubble",
-				"hero": {
-					"type": "image",
-					"url": "https://developers-resource.landpress.line.me/fx/img/01_1_cafe.png",
-					"size": "full",
-					"aspectRatio": "20:13",
-					"aspectMode": "cover",
-					"action": {
-						"type": "uri",
-						"uri": "https://line.me/"
+		alt_text='travel_info',
+		contents={
+			"type": "bubble",
+			"body": {
+				"type": "box",
+				"layout": "vertical",
+				"contents": [
+					{
+						"type": "text",
+						"text": labelText,
+						"weight": "bold",
+						"size": "xl"
+					},
+					{
+						"type": "button",
+						"action": uri_action
 					}
-				},
-				"body": {
-					"type": "box",
-					"layout": "vertical",
-					"contents": [
-						{
-							"type": "text",
-							"text": "Brown Cafe",
-							"weight": "bold",
-							"size": "xl"
-						},
-						{
-							"type": "box",
-							"layout": "baseline",
-							"margin": "md",
-							"contents": [
-								{
-									"type": "icon",
-									"size": "sm",
-									"url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-								},
-								{
-									"type": "icon",
-									"size": "sm",
-									"url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-								},
-								{
-									"type": "icon",
-									"size": "sm",
-									"url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-								},
-								{
-									"type": "icon",
-									"size": "sm",
-									"url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
-								},
-								{
-									"type": "icon",
-									"size": "sm",
-									"url": "https://developers-resource.landpress.line.me/fx/img/review_gray_star_28.png"
-								},
-								{
-									"type": "text",
-									"text": "4.0",
-									"size": "sm",
-									"color": "#999999",
-									"margin": "md",
-									"flex": 0
-								}
-							]
-						},
-						{
-							"type": "box",
-							"layout": "vertical",
-							"margin": "lg",
-							"spacing": "sm",
-							"contents": [
-								{
-									"type": "box",
-									"layout": "baseline",
-									"spacing": "sm",
-									"contents": [
-										{
-											"type": "text",
-											"text": "Place",
-											"color": "#aaaaaa",
-											"size": "sm",
-											"flex": 1
-										},
-										{
-											"type": "text",
-											"text": "Flex Tower, 7-7-4 Midori-ku, Tokyo",
-											"color": "#666666",
-											"size": "sm",
-											"flex": 5
-										}
-									]
-								},
-								{
-									"type": "box",
-									"layout": "baseline",
-									"spacing": "sm",
-									"contents": [
-										{
-											"type": "text",
-											"text": "Time",
-											"color": "#aaaaaa",
-											"size": "sm",
-											"flex": 1
-										},
-										{
-											"type": "text",
-											"text": "10:00 - 23:00",
-											"color": "#666666",
-											"size": "sm",
-											"flex": 5
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				"footer": {
-					"type": "box",
-					"layout": "vertical",
-					"spacing": "sm",
-					"contents": [
-						{
-							"type": "button",
-							"style": "link",
-							"height": "sm",
-							"action": {
-								"type": "uri",
-								"label": "CALL",
-								"uri": "https://line.me/"
-							}
-						},
-						{
-							"type": "button",
-							"style": "link",
-							"height": "sm",
-							"action": {
-								"type": "uri",
-								"label": "WEBSITE",
-								"uri": "https://line.me/"
-							}
-						},
-						{
-							"type": "box",
-							"layout": "vertical",
-							"contents": [],
-							"margin": "sm"
-						}
-					],
-					"flex": 0
-				}
+				]
 			}
-		)
+		})
+
 		line_bot_api.reply_message(event.reply_token, flex_message)
 
 
-import os
+	if event.postback.data == 'action=car':
+		labelText = "前往投保車險"
+		uri_action = URIAction(label="go go go!", uri="https://dev.robinstech.com.tw/car_cathay/")
+
+		flex_message = FlexSendMessage(
+		alt_text='car_info',
+		contents={
+			"type": "bubble",
+			"body": {
+				"type": "box",
+				"layout": "vertical",
+				"contents": [
+					{
+						"type": "text",
+						"text": labelText,
+						"weight": "bold",
+						"size": "xl"
+					},
+					{
+						"type": "button",
+						"action": uri_action
+					}
+				]
+			}
+		})
+
+		line_bot_api.reply_message(event.reply_token, flex_message)
+
+
+	if event.postback.data == 'action=bonus':
+		with open('test.json', 'r') as file:
+			flex_contents = json.load(file)
+
+		flex_message = FlexSendMessage(
+			alt_text='hello',
+			contents=flex_contents
+		)
+		line_bot_api.reply_message(event.reply_token, flex_message)
+
+def link_rich_menu(role, user_id):
+	rich_menu_ids = {
+		"sales": SALES_MENU,
+		"customer": CUSTOMER_MENU
+	}
+
+	rich_menu_id = rich_menu_ids.get("sales") if user_id == "Uc79c50d0da1c0c115957999fa197dff8" else rich_menu_ids.get("customer")
+	# rich_menu_id = rich_menu_ids.get("sales") if role == "sales" else rich_menu_ids.get("customer")
+
+	url = f"https://api.line.me/v2/bot/user/{user_id}/richmenu/{rich_menu_id}"
+	headers = {
+		"Authorization": f"Bearer {LINE_CHANNEL_ACCESS_TOKEN}"
+	}
+	response = requests.post(url, headers=headers)
+
+	return response.status_code
+
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 80))
-    app.run(host='0.0.0.0', port=port)
+	link_rich_menu("sales", "Uc79c50d0da1c0c115957999fa197dff8")
+	
+	port = int(os.environ.get('PORT', 80))
+	app.run(host='0.0.0.0', port=port)
