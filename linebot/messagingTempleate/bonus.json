@@ -52,7 +52,8 @@
                   "paddingTop": "8px",
                   "paddingBottom": "8px",
                   "paddingStart": "4px",
-                  "paddingEnd": "4px"
+                  "paddingEnd": "4px",
+                  "cornerRadius": "6px"
                 },
                 {
                   "type": "box",
@@ -80,7 +81,8 @@
                   "paddingTop": "8px",
                   "paddingBottom": "8px",
                   "paddingStart": "4px",
-                  "paddingEnd": "4px"
+                  "paddingEnd": "4px",
+                  "cornerRadius": "6px"
                 },
                 {
                   "type": "box",
@@ -108,7 +110,8 @@
                   "paddingTop": "8px",
                   "paddingBottom": "8px",
                   "paddingStart": "4px",
-                  "paddingEnd": "4px"
+                  "paddingEnd": "4px",
+                  "cornerRadius": "6px"
                 }
               ],
               "margin": "8px"

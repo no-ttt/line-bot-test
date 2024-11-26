@@ -23,7 +23,8 @@
             }
           ],
           "backgroundColor": "#F5F5F6",
-          "margin": "10px"
+          "margin": "10px",
+          "cornerRadius": "5px"
         },
         {
           "type": "box",
@@ -40,7 +41,8 @@
             }
           ],
           "backgroundColor": "#F5F5F6",
-          "margin": "10px"
+          "margin": "10px",
+          "cornerRadius": "5px"
         },
         {
           "type": "box",
@@ -57,7 +59,8 @@
             }
           ],
           "backgroundColor": "#F5F5F6",
-          "margin": "10px"
+          "margin": "10px",
+          "cornerRadius": "5px"
         }
       ]
     },
