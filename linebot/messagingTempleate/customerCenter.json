@@ -1,0 +1,51 @@
+{
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "羅賓斯保險代理人 服務中心",
+              "size": "14px"
+            },
+            {
+              "type": "text",
+              "text": "客服電話：02-7729-5280",
+              "size": "14px"
+            },
+            {
+              "type": "text",
+              "text": "電子信箱：service@robinstech.com.tw",
+              "size": "14px"
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "style": "link",
+              "height": "sm",
+              "action": {
+                "type": "uri",
+                "label": "撥打電話",
+                "uri": "tel:0277295280"
+              },
+              "color": "#000000"
+            }
+          ],
+          "flex": 0,
+          "backgroundColor": "#F5F5F6",
+          "margin": "10px"
+        }
+      ]
+    }
+  }

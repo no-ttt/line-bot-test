@@ -1,0 +1,69 @@
+{
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "請問您要查詢的險種為"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "postback",
+                "label": "車險",
+                "data": "car"
+              },
+              "color": "#000000"
+            }
+          ],
+          "backgroundColor": "#F5F5F6",
+          "margin": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "postback",
+                "label": "旅平險",
+                "data": "travel"
+              },
+              "color": "#000000"
+            }
+          ],
+          "backgroundColor": "#F5F5F6",
+          "margin": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "postback",
+                "label": "租車日保",
+                "data": "carday"
+              },
+              "color": "#000000"
+            }
+          ],
+          "backgroundColor": "#F5F5F6",
+          "margin": "10px"
+        }
+      ]
+    },
+    "styles": {
+      "footer": {
+        "separator": true
+      }
+    }
+  }

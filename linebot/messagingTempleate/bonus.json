@@ -1,0 +1,120 @@
+{
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "您的 {{ title }} 預計佣金",
+              "size": "16px",
+              "color": "#175B9F",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "text": "總金額 {{ bonus }} 元",
+              "size": "20px",
+              "weight": "bold",
+              "margin": "4px"
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "未處理",
+                      "color": "#5CC4B1",
+                      "size": "12px",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "{{ notProcessedBonus }} 元",
+                      "color": "#5CC4B1",
+                      "size": "12px",
+                      "weight": "bold"
+                    }
+                  ],
+                  "backgroundColor": "#E8EEF633",
+                  "margin": "4px",
+                  "alignItems": "flex-start",
+                  "justifyContent": "center",
+                  "paddingTop": "8px",
+                  "paddingBottom": "8px",
+                  "paddingStart": "4px",
+                  "paddingEnd": "4px"
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "已發放",
+                      "color": "#FF85C0",
+                      "size": "12px",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "{{ issuedBonus }} 元",
+                      "color": "#FF85C0",
+                      "size": "12px",
+                      "weight": "bold"
+                    }
+                  ],
+                  "backgroundColor": "#E8EEF633",
+                  "margin": "4px",
+                  "alignItems": "flex-start",
+                  "justifyContent": "center",
+                  "paddingTop": "8px",
+                  "paddingBottom": "8px",
+                  "paddingStart": "4px",
+                  "paddingEnd": "4px"
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "待發放",
+                      "color": "#FFB156",
+                      "size": "12px",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "{{ tobeIssuedBonus }} 元",
+                      "color": "#FFB156",
+                      "size": "12px",
+                      "weight": "bold"
+                    }
+                  ],
+                  "backgroundColor": "#E8EEF633",
+                  "margin": "4px",
+                  "alignItems": "flex-start",
+                  "justifyContent": "center",
+                  "paddingTop": "8px",
+                  "paddingBottom": "8px",
+                  "paddingStart": "4px",
+                  "paddingEnd": "4px"
+                }
+              ],
+              "margin": "8px"
+            }
+          ]
+        }
+      ]
+    }
+  }

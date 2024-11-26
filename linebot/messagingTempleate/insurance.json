@@ -1,0 +1,69 @@
+{
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "請問您要投保的是"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "車險",
+                "uri": "https://dev.robinstech.com.tw/car_cathay/"
+              },
+              "color": "#000000"
+            }
+          ],
+          "backgroundColor": "#F5F5F6",
+          "margin": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "旅平險",
+                "uri": "https://dev.robinstech.com.tw/travel_black/"
+              },
+              "color": "#000000"
+            }
+          ],
+          "backgroundColor": "#F5F5F6",
+          "margin": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "租車日保",
+                "uri": "https://dev.robinstech.com.tw/car_day/"
+              },
+              "color": "#000000"
+            }
+          ],
+          "backgroundColor": "#F5F5F6",
+          "margin": "10px"
+        }
+      ]
+    },
+    "styles": {
+      "footer": {
+        "separator": true
+      }
+    }
+  }
