@@ -1,80 +1,79 @@
 {
-    "type": "bubble",
-    "hero": {
-      "type": "image",
-      "size": "full",
-      "aspectRatio": "20:13",
-      "aspectMode": "cover",
-      "backgroundColor": "#D1E8FF",
-      "url": "./more.png"
-    },
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "box",
-          "layout": "vertical",
-          "spacing": "sm",
-          "contents": [
-            {
-              "type": "button",
-              "style": "link",
-              "height": "sm",
-              "action": {
-                "type": "uri",
-                "label": "{{ travelTitle }}",
-                "uri": "{{ travelUri }}"
-              },
-              "color": "#000000"
-            }
-          ],
-          "flex": 0,
-          "backgroundColor": "#F5F5F6",
-          "margin": "10px"
-        },
-        {
-          "type": "box",
-          "layout": "vertical",
-          "spacing": "sm",
-          "contents": [
-            {
-              "type": "button",
-              "style": "link",
-              "height": "sm",
-              "action": {
-                "type": "uri",
-                "label": "{{ carTitle }}",
-                "uri": "{{ carUri }}"
-              },
-              "color": "#000000"
-            }
-          ],
-          "flex": 0,
-          "backgroundColor": "#F5F5F6",
-          "margin": "10px"
-        },
-        {
-          "type": "box",
-          "layout": "vertical",
-          "spacing": "sm",
-          "contents": [
-            {
-              "type": "button",
-              "style": "link",
-              "height": "sm",
-              "action": {
-                "type": "uri",
-                "label": "{{ cardayTitle }}",
-                "uri": "{{ cardayUri }}"
-              },
-              "color": "#000000"
-            }
-          ],
-          "flex": 0,
-          "backgroundColor": "#F5F5F6",
-          "margin": "10px"
-        }
-      ]
-    }
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "backgroundColor": "#D1E8FF"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+              "type": "postback",
+              "label": "action",
+              "data": "travel"
+            },
+            "color": "#000000"
+          }
+        ],
+        "flex": 0,
+        "backgroundColor": "#F5F5F6",
+        "margin": "10px"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+              "type": "postback",
+              "label": "action",
+              "data": "car"
+            },
+            "color": "#000000"
+          }
+        ],
+        "flex": 0,
+        "backgroundColor": "#F5F5F6",
+        "margin": "10px"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+              "type": "postback",
+              "label": "action",
+              "data": "carday"
+            },
+            "color": "#000000"
+          }
+        ],
+        "flex": 0,
+        "backgroundColor": "#F5F5F6",
+        "margin": "10px"
+      }
+    ]
   }
+}
