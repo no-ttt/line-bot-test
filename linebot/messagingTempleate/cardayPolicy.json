@@ -1,0 +1,128 @@
+{
+    "type": "bubble",
+    "hero": {
+      "type": "image",
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "cover",
+      "backgroundColor": "#175B9F",
+      "url": "./logo.png"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "{{ title }}",
+          "weight": "bold",
+          "size": "16px",
+          "color": "#175B9F"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "4px",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "保單狀態：",
+                  "size": "12px",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "{{ status }}",
+                  "wrap": true,
+                  "size": "12px",
+                  "flex": 3,
+                  "color": "{{ statusColor }}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "4px",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "投保時間：",
+                  "size": "12px",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "{{ startDate }}",
+                  "wrap": true,
+                  "size": "12px",
+                  "flex": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "4px",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "到期時間：",
+                  "size": "12px",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "{{ endDate }}",
+                  "wrap": true,
+                  "size": "12px",
+                  "flex": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "style": "link",
+              "height": "sm",
+              "action": {
+                "type": "uri",
+                "label": "了解詳情",
+                "uri": "https://dev.robinstech.com.tw/member-center/"
+              },
+              "color": "#000000"
+            }
+          ],
+          "flex": 0,
+          "backgroundColor": "#F5F5F6",
+          "margin": "10px",
+          "cornerRadius": "5px"
+        }
+      ]
+    }
+  }

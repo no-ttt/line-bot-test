@@ -1,12 +1,29 @@
 # Parameters
 
-## policy.json
+## travelPolicy.json
 - title: 保險名稱
 - status: 保單狀態
 - statusColor: 狀態顏色 (已生效: #3D9610 , 未生效: #979797)
-- tags: 方案特點
-- InsuranceTime: 投保時間
-- expirationTime: 到期時間
+- nation: 旅遊國家
+- startDate: 投保時間
+- endDate: 到期時間
+
+## cardayPolicy.json
+- title: 保險名稱
+- status: 保單狀態
+- statusColor: 狀態顏色 (已生效: #3D9610 , 未生效: #979797)
+- startDate: 投保時間
+- endDate: 到期時間
+
+
+## carPolicy.json
+- title: 保險名稱
+- status: 保單狀態
+- statusColor: 狀態顏色 (已生效: #3D9610 , 未生效: #979797)
+- compulsoryInsuranceStartDate: 強制險投保時間
+- compulsoryInsuranceEndDate: 強制險到期時間
+- voluntaryInsuranceStartDate: 任意險投保時間
+- voluntaryInsuranceEndDate: 任意險到期時間
 
 
 ## more.json
