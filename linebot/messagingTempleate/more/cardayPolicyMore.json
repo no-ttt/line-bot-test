@@ -5,7 +5,8 @@
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
-    "backgroundColor": "#D1E8FF"
+    "backgroundColor": "#D1E8FF",
+    "url": "./more.png"
   },
   "body": {
     "type": "box",
@@ -21,16 +22,17 @@
             "style": "link",
             "height": "sm",
             "action": {
-              "type": "postback",
-              "label": "action",
-              "data": "travel"
+              "type": "message",
+              "text": "TRAVEL_POLICY",
+              "label": "查看 旅平險 保單"
             },
             "color": "#000000"
           }
         ],
         "flex": 0,
         "backgroundColor": "#F5F5F6",
-        "margin": "10px"
+        "margin": "10px",
+        "cornerRadius": "6px"
       },
       {
         "type": "box",
@@ -42,16 +44,17 @@
             "style": "link",
             "height": "sm",
             "action": {
-              "type": "postback",
-              "label": "action",
-              "data": "car"
+              "type": "message",
+              "label": "查看 車險 保單",
+              "text": "CAR_POLICY"
             },
             "color": "#000000"
           }
         ],
         "flex": 0,
         "backgroundColor": "#F5F5F6",
-        "margin": "10px"
+        "margin": "10px",
+        "cornerRadius": "6px"
       },
       {
         "type": "box",
@@ -63,16 +66,17 @@
             "style": "link",
             "height": "sm",
             "action": {
-              "type": "postback",
-              "label": "action",
-              "data": "carday"
+              "type": "uri",
+              "uri": "https://dev.robinstech.com.tw/member-center/",
+              "label": "更多 租車日保 保單"
             },
             "color": "#000000"
           }
         ],
         "flex": 0,
         "backgroundColor": "#F5F5F6",
-        "margin": "10px"
+        "margin": "10px",
+        "cornerRadius": "6px"
       }
     ]
   }

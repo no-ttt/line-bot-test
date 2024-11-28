@@ -1,0 +1,83 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "backgroundColor": "#D1E8FF",
+    "url": "./more.png"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+              "type": "uri",
+              "uri": "https://dev.robinstech.com.tw/member-center/",
+              "label": "更多 旅平險 保單"
+            },
+            "color": "#000000"
+          }
+        ],
+        "flex": 0,
+        "backgroundColor": "#F5F5F6",
+        "margin": "10px",
+        "cornerRadius": "6px"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "text": "CAR_POLICY",
+              "label": "查看 車險 保單"
+            },
+            "color": "#000000"
+          }
+        ],
+        "flex": 0,
+        "backgroundColor": "#F5F5F6",
+        "margin": "10px",
+        "cornerRadius": "6px"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+              "type": "message",
+              "label": "查看 租車日保 保單",
+              "text": "RENT_CAR_DAY_POLICY"
+            },
+            "color": "#000000"
+          }
+        ],
+        "flex": 0,
+        "backgroundColor": "#F5F5F6",
+        "margin": "10px",
+        "cornerRadius": "6px"
+      }
+    ]
+  }
+}

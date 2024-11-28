@@ -27,12 +27,29 @@
 
 
 ## more.json
-<!-- - travelTitle: 更多/查看 旅平險 保單 (txt)
+text keyword
+```
+CAR_POLICY("車險","CAR_POLICY"),
+RENT_CAR_DAY_POLICY("租車日保","RENT_CAR_DAY_POLICY"),
+TRAVEL_POLICY("旅平險","TRAVEL_POLICY");
+```
+
+
+### carPolicyMore
+- travelTitle: 更多/查看 旅平險 保單 (txt)
 - travelUri: 旅平險連結
 - carTitle: 更多/查看 車險 保單 (txt)
 - carUri: 車險連結
 - cardayTitle: 更多/查看 租車日保 保單 (txt)
-- cardaylUri: 租車日保連結 -->
+- cardaylUri: 租車日保連結
+
+### cardayPolicyMore
+- travelTitle: 更多/查看 旅平險 保單 (txt)
+- travelUri: 旅平險連結
+- carTitle: 更多/查看 車險 保單 (txt)
+- carUri: 車險連結
+- cardayTitle: 更多/查看 租車日保 保單 (txt)
+- cardaylUri: 租車日保連結
 
 
 ## bonus.json

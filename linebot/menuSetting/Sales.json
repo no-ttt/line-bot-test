@@ -15,9 +15,8 @@
                 "height": 843
             },
             "action": {
-                "type": "postback",
-                "label": "佣金紀錄",
-                "data": "action=bonus"
+                "type": "message",
+                "text": "佣金紀錄"
             }
         },
         {
@@ -28,9 +27,8 @@
                 "height": 843
             },
             "action": {
-                "type": "postback",
-                "label": "我的保單",
-                "data": "action=insurancePolicy"
+                "type": "message",
+                "text": "我的保單"
             }
         },
         {
@@ -41,9 +39,8 @@
                 "height": 843
             },
             "action": {
-                "type": "postback",
-                "label": "我要投保",
-                "data": "action=insurance"
+                "type": "message",
+                "text": "我要投保"
             }
         },
         {
@@ -54,9 +51,8 @@
                 "height": 843
             },
             "action": {
-                "type": "postback",
-                "label": "尋找客服",
-                "data": "action=customerService"
+                "type": "message",
+                "text": "尋找客服"
             }
         }
     ]
